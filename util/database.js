@@ -6,5 +6,4 @@ const pool = mysql.createPool({
     database:'node-app',
 })
 
-
 module.exports = pool.promise()
