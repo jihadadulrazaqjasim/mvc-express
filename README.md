@@ -1,4 +1,4 @@
-# First Assignment in Nodejs Course NodeJS - The Complete Guide (MVC, REST APIs, GraphQL, Deno)
+# Nodejs Course NodeJS - The Complete Guide (MVC, REST APIs, GraphQL, Deno)
 
 ## By: Maximilian Schwarzmüller
 
