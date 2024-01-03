@@ -1,0 +1,43 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/product.css">
+
+<style>
+    button#delete_btn:hover {
+        background-color: #de4a5b;
+        color: white;
+    }
+</style>
+</head>
+
+<body>
+<%- include('../includes/navigation.ejs') %>
+
+<main>
+    <% if(products.length > 0) { %>
+        <div class="grid">
+            <% products.forEach(async (product)=>{ %>
+            <article class="card product-item">
+                <header class="card__header">
+                    <h1 class="product__title"><%=product.title%></h1>
+                </header>
+                <div class="card__image">
+                    <img src="<%= product.imageUrl%>" alt="<%=product.title%>">
+                </div>
+                <div class="card__content">
+                    <h2 class="product__price">$<%= product.price %></h2>
+                    <p class="product__description" ><%= product.description.substring(1,100)+"..."%></p>
+                </div>
+                <div class="card__actions">
+                    <a href="/admin/products/edit/<%= product.id%>?edit=false" class="btn" id="edit_btn">Edit</a>
+                    <form action="/admin/products/destroy/<%= product.id%>" method="post">
+                        <button type="submit" class="btn" id="delete_btn">Delete</button>
+                    </form>
+                </div>
+            </article>
+            <%});%>
+        </div>
+    <% } else {%>
+        <h1>No Products Buddy!</h1>
+    <% }%>
+</main>
+<%- include('../includes/end.ejs') %>
