@@ -13,6 +13,7 @@ const app = express();
 app.set('view engine','ejs')
 // app.set('views','views') //Not needed
 
+
 //parse body
 app.use(bodyParser.urlencoded({extended: false}));
 
