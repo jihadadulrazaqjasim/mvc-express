@@ -16,7 +16,6 @@ app.set('view engine','ejs')
 //parse body
 app.use(bodyParser.urlencoded({extended: false}));
 
-
 //serve static content from public folder
 app.use(express.static(path.join(__dirname, 'public')));
 
